@@ -117,18 +117,31 @@ a {
 
 }
 ´
-
+.work-container {
+    display: inherit;
+    opacity: inherit;
+    width:80vw;
+    @include transition(all 1s ease);
+    @include breakpoint(small){
+      max-width: 425px;
+    };
+    @include breakpoint(medium){
+      max-width: 580px;
+    };
+    @include breakpoint(large){
+      width: 780px;
+    };
+}
 
 .work-p {
     margin:$gutter;
-    float: right;
+
   opacity: inherit;
   @include transition(all 1s ease);
 }
 
 .work-h4 {
   text-align: center;
-  float: right;
 }
 
 .work-img {
