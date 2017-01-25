@@ -1,12 +1,14 @@
-/*------------------------contact page*/
+/*--------------------- Contact page */
 
+//--------------------- Background divs */
 
 /*------------------------yellow top div*/
 
 .yellow_topbox {
     @include flex-center;
-    flex-direction: column;
+    @include flex-direction(column);
     background: $yellow;
+    //--- 180vw to have the div cover whole screen
     width: 180vw;
     height: 26rem;
     margin-top: $gutter * 4;
@@ -22,6 +24,20 @@
     @include breakpoint(large) {
         margin-top: $gutter * 10;
         height: 36rem;
+    }
+}
+
+.red_midbox {
+    @include flex-center;
+    background: $red;
+    color: white;
+    width: 180vw;
+    height: 26em;
+    z-index: 1;
+    @include transform(rotate(-10deg));
+    // ---------------------- Media queries
+    @include breakpoint(xlarge) {
+        height: 36em;
     }
 }
 
@@ -43,9 +59,7 @@
     }
 }
 
-
-/*------------------------Contact hero text*/
-
+//--------------------- Content in yellow div */
 .contact-section-1 {
     width: 18em;
     margin-left: -$main-margin*2;
@@ -86,59 +100,19 @@
     }
 }
 
-.red_midbox {
-    @include flex-center;
-    background: $red;
-    color: white;
-    width: 180vw;
-    height: 26em;
-    z-index: 1;
-    @include transform(rotate(-10deg));
-    // ---------------------- Media queries
-    @include breakpoint(xlarge) {
-        height: 36em;
-    }
-}
 
-.contact-section-2 {
-    // display: none;
-    width: 90vw;
-    margin: $main-margin;
-    text-align: center;
-    @include transform(rotate(10deg));
-    // ---------------------- Media queries
-    @include breakpoint(medium) {
-        width: 42em;
-    }
-    @include breakpoint(xlarge) {
-        width: 20em;
-        &:first-child {
-            @include heading-3;
-        }
-    }
-}
-
-.darkgray {
-    font-size: $text-size *1.2;
-    // ---------------------- Media queries
-    @include breakpoint(medium) {
-        font-size: $text-size *1.5;
-    }
-}
-
-
-/*------------------------circles for address, phone and email with 3D flipping style*/
+/*------------------------ Settings for circles with icons for address, phone and email with 3D flipping style*/
 
 .container-circles {
     @include flex-center;
-    flex-direction: row;
+    @include flex-direction(row);
     margin-left: 7.5em;
     // ---------------------- Media queries
     @include breakpoint(small) {
         margin-left: 6em;
     }
     @include breakpoint(medium) {
-        flex-direction: column;
+        @include flex-direction(column);
         margin-left: 0;
         margin-right: 7.5rem;
         @include transform(rotate(35deg));
@@ -147,7 +121,7 @@
 
 .contact_circle {
     @include flex-center;
-    flex-direction: column;
+    @include flex-direction(column);
     position: relative;
     background: $red;
     border-radius: 50%;
@@ -230,8 +204,34 @@
     }
 }
 
+//--------------------- Content in red div */
+.contact-section-2 {
+    width: 90vw;
+    margin: $main-margin;
+    text-align: center;
+    @include transform(rotate(10deg));
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        width: 42em;
+    }
+    @include breakpoint(xlarge) {
+        width: 20em;
+        &:first-child {
+            @include heading-3;
+        }
+    }
+}
 
-/*------------------------Contact form*/
+.text-section-2 {
+    font-size: $text-size *1.2;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        font-size: $text-size *1.5;
+    }
+}
+
+
+/*------------------------Contact form with animation*/
 
 @include keyframe(formMove) {
     from {
@@ -244,8 +244,8 @@
 
 .form_circle {
     @include flex-center;
+    @include flex-direction(column);
     text-align: center;
-    flex-direction: column;
     background: $light-green;
     border-radius: 50%;
     width: 95vw;
@@ -270,9 +270,25 @@
     }
 }
 
+.hero-form {
+    word-wrap: break-word;
+    margin: 0;
+    margin-bottom: $gutter / 2;
+    text-align: center;
+    color: $dark-gray;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        margin-bottom: $gutter;
+        font-size: 1.5em;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 3em;
+    }
+}
+
 .contactform {
     @include flex-center;
-    flex-direction: column;
+    @include flex-direction(column);
     width: 100%;
 }
 
@@ -292,22 +308,6 @@
     }
 }
 
-.hero-form {
-    word-wrap: break-word;
-    margin: 0;
-    margin-bottom: $gutter / 2;
-    text-align: center;
-    color: $dark-gray;
-    // ---------------------- Media queries
-    @include breakpoint(medium) {
-        margin-bottom: $gutter;
-        font-size: 1.5em;
-    }
-    @include breakpoint(xlarge) {
-        font-size: 3em;
-    }
-}
-
 .message {
     width: 50%;
     padding: $gutter / 2;
@@ -323,6 +323,7 @@
     }
 }
 
+// ---------------------- Expand height of message input on focus
 .message:focus {
     height: 6em;
     outline: none;
@@ -356,7 +357,9 @@
     border-color: $dark-gray;
 }
 
+// ---------------------- Styled circle-button
 .send-button {
+    @include flexbox;
     height: 5em;
     width: 5em;
     background: $dark-gray;
@@ -365,7 +368,6 @@
     border: 0;
     border-radius: 10em;
     font-size: 1.3em;
-    display: flex;
     margin: 0 auto;
     margin-top: 0.5em;
     margin-bottom: -2em;
@@ -373,7 +375,7 @@
     padding: 1em;
     // ---------------------- Media queries
     @include breakpoint(medium) {
-        margin-top: 1.5em;
+        margin-top: $gutter *1.5;
     }
     @include breakpoint(xlarge) {
         margin-top: $gutter *3;
