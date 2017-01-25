@@ -1,0 +1,153 @@
+
+//animation for about.
+@include keyframe (fade) {
+    from {
+        opacity: 0;
+        display: none;
+        //flex-direction: row;
+    }
+    to {
+        opacity: 1;
+        display:flex;
+        //flex-direction: column;
+    }
+}
+@include keyframe (fade-out) {
+    from {
+        opacity: 1;
+        display: flex;
+        //flex-direction: row;
+    }
+    to {
+        opacity: 0;
+        display:none;
+        //flex-direction: column;
+    }
+}
+//section for about.
+.work-box {
+  position:relative;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+  height:20rem;
+  width: 180vw;
+  background: $yellow;
+  margin-top: $gutter * 7;
+  @include transition(all 2s ease);
+  @include transform(rotate(25deg) translate(-20%,0));
+  text-align: left;
+  cursor:pointer;
+
+/*
+  #btnControl {
+    display: none;
+}
+ .work-article{
+     display: none;
+ }
+
+#btnControl:checked ~ */
+.work-article {
+    @include transition(all 1s ease);
+    width: 100vw;
+    margin:0;
+    opacity: 0;
+    display: none;
+
+    &.is-active {
+      @include animation(fade, 1s, forwards, 1);
+      opacity: 1;
+      @include transition(all 1s ease);
+      display: flex;
+    }
+    @include breakpoint(medium){
+    };
+}
+
+
+&.is-active {
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  margin:0 0 10em 0;
+  @include transform(translate(0, 10%));
+  @include breakpoint(xsmall){
+        height: auto;
+  };
+  @include breakpoint(small){
+    height:auto;
+  };
+
+  @include breakpoint(medium){
+    height:auto;
+  };
+}
+  //queries
+  @include breakpoint(small){
+    @include transform(rotate(25deg) translate(-45%));
+  };
+  @include breakpoint(large){
+
+  };
+}
+
+a {
+   text-decoration: none;
+}
+
+.about-h1 {
+  color:white;
+  @include transform(rotate(0));
+  @include transition(all 1s ease);
+  @include heading-2;
+  //top:1em;
+  margin: 0 2em 4em 0;
+  cursor: pointer;
+  //position:absolute;
+  //top:1em;
+  //margin: 1em 1em 1em 1em;
+
+  &.is-active {
+    @include transition(all 1s ease);
+    @include transform(rotate(0));
+    margin:1em 0;
+  }
+
+}
+´
+
+
+.work-p {
+    margin:$gutter;
+    float: right;
+  opacity: inherit;
+  @include transition(all 1s ease);
+}
+
+.work-h4 {
+  text-align: center;
+  float: right;
+}
+
+.work-img {
+    float: left;
+      width: 20vw;
+      height: auto;
+//queries
+  @include breakpoint(medium){
+    width:20vw;
+    height: auto;
+  } ;
+}
+.bggreen{
+background: $light-green;
+}
+.bgred{
+background: $red;
+}
+
+.bggray{
+background: $light-gray;
+}

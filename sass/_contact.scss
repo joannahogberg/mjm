@@ -1,0 +1,391 @@
+/*------------------------contact page*/
+
+
+/*------------------------yellow top div*/
+
+.yellow_topbox {
+    @include flex-center;
+    flex-direction: column;
+    background: $yellow;
+    width: 180vw;
+    height: 26rem;
+    margin-top: $gutter * 4;
+    z-index: 2;
+    @include transform(rotate(25deg));
+    // ---------------------- Media queries
+    @include breakpoint(small) {
+        margin-top: $gutter * 8;
+    }
+    @include breakpoint(medium) {
+        flex-direction: row;
+    }
+    @include breakpoint(large) {
+        margin-top: $gutter * 10;
+        height: 36rem;
+    }
+}
+
+.background-box-mediumgray {
+    width: 100vw;
+    height: 20rem;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    z-index: 1;
+    background: $medium-gray;
+    display: none;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        display: block;
+    }
+    @include breakpoint(xlarge) {
+        height: 36em;
+    }
+}
+
+
+/*------------------------Contact hero text*/
+
+.contact-section-1 {
+    width: 18em;
+    margin-left: -$main-margin*2;
+    @include transform(rotate(-25deg));
+    // ---------------------- Media queries
+    @include breakpoint(small) {
+        width: 20em;
+    }
+    @include breakpoint(medium) {
+        width: 30em;
+        margin-left: 0;
+        margin-right: -$gutter * 3;
+    }
+    @include breakpoint(large) {
+        margin-right: 0;
+    }
+    @include breakpoint(xlarge) {
+        width: 35em;
+    }
+}
+
+
+/*-----------------------Header contact-page*/
+
+.contact-hero {
+    word-wrap: break-word;
+    text-align: center;
+    color: $dark-gray;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        font-size: 2.5em;
+    }
+    @include breakpoint(large) {
+        font-size: 3em;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 3.5em;
+    }
+}
+
+.red_midbox {
+    @include flex-center;
+    background: $red;
+    color: white;
+    width: 180vw;
+    height: 26em;
+    z-index: 1;
+    @include transform(rotate(-10deg));
+    // ---------------------- Media queries
+    @include breakpoint(xlarge) {
+        height: 36em;
+    }
+}
+
+.contact-section-2 {
+    // display: none;
+    width: 90vw;
+    margin: $main-margin;
+    text-align: center;
+    @include transform(rotate(10deg));
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        width: 42em;
+    }
+    @include breakpoint(xlarge) {
+        width: 20em;
+        &:first-child {
+            @include heading-3;
+        }
+    }
+}
+
+.darkgray {
+    font-size: $text-size *1.2;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        font-size: $text-size *1.5;
+    }
+}
+
+
+/*------------------------circles for address, phone and email with 3D flipping style*/
+
+.container-circles {
+    @include flex-center;
+    flex-direction: row;
+    margin-left: 7.5em;
+    // ---------------------- Media queries
+    @include breakpoint(small) {
+        margin-left: 6em;
+    }
+    @include breakpoint(medium) {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 7.5rem;
+        @include transform(rotate(35deg));
+    }
+}
+
+.contact_circle {
+    @include flex-center;
+    flex-direction: column;
+    position: relative;
+    background: $red;
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    border: 0.5em solid $dark-gray;
+    margin: -0.5em;
+    @include transform(rotate(-25deg));
+    &:first-child {
+        background: $light-gray;
+    }
+    &:last-child {
+        background: $medium-green;
+    }
+    &:hover {
+        z-index: 30;
+        cursor: pointer;
+        @include transform(scale(1.7));
+        @include transition(all 1s ease);
+    }
+    // ---------------------- Media queries
+    @include breakpoint(xsmall) {
+        margin: $gutter / 2;
+    }
+    @include breakpoint(medium) {
+        width: 7.5em;
+        height: 7.5em;
+        @include transform(rotate(-60deg));
+    }
+}
+
+.front,
+.back {
+    @include flex-center;
+}
+
+.info_icon {
+    width: 60%;
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+    @include transform-style(preserve-3d);
+    @include transition(all 1.0s linear);
+}
+
+.contact_circle:hover .info {
+    @include transform(rotateY(180deg));
+    @include backface-visibility(hidden);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include backface-visibility(hidden);
+}
+
+.face.back {
+    @include transform(rotateY(180deg));
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 0.5rem;
+    @include transform(rotate(-25deg));
+    // ---------------------- Media queries
+    @include breakpoint(xsmall) {
+        font-size: 0.6rem;
+    }
+    @include breakpoint(medium) {
+        font-size: 0.7rem;
+        @include transform(rotate(-60deg));
+    }
+    @include breakpoint(medium) {
+        font-size: 0.8rem;
+        padding: 0.2rem;
+        @include transform(rotate(-60deg));
+    }
+}
+
+
+/*------------------------Contact form*/
+
+@include keyframe(formMove) {
+    from {
+        top: 0%;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+.form_circle {
+    @include flex-center;
+    text-align: center;
+    flex-direction: column;
+    background: $light-green;
+    border-radius: 50%;
+    width: 95vw;
+    height: 95vw;
+    border: 0.5em solid $medium-gray;
+    position: absolute;
+    // Place it centered
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    @include animation(formMove, 3s, forwards, 1);
+    z-index: 7;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        width: 60vw;
+        height: 60vw;
+    }
+    @include breakpoint(xlarge) {
+        width: 60em;
+        height: 60em;
+    }
+}
+
+.contactform {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-label {
+    display: none;
+    // ---------------------- Media queries
+    @include breakpoint(large) {
+        width: 50%;
+        display: block;
+        padding-right: $gutter;
+        text-align: left;
+        color: $medium-gray;
+        padding-bottom: 0.2rem;
+    }
+    @include breakpoint(xlarge) {
+        padding-right: $gutter*2;
+    }
+}
+
+.hero-form {
+    word-wrap: break-word;
+    margin: 0;
+    margin-bottom: $gutter / 2;
+    text-align: center;
+    color: $dark-gray;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        margin-bottom: $gutter;
+        font-size: 1.5em;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 3em;
+    }
+}
+
+.message {
+    width: 50%;
+    padding: $gutter / 2;
+    border-radius: 5px;
+    border: 1px solid $light-gray;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        padding-bottom: $gutter *3;
+    }
+    @include breakpoint(xlarge) {
+        padding: $gutter;
+        padding-bottom: $gutter*5;
+    }
+}
+
+.message:focus {
+    height: 6em;
+    outline: none;
+    border-color: $dark-gray;
+    // ---------------------- Media queries
+    @include breakpoint(small) {
+        height: 8em;
+    }
+    @include breakpoint(medium) {
+        height: 10em;
+    }
+    @include breakpoint(xlarge) {
+        height: 12em;
+    }
+}
+
+.text-field {
+    width: 50%;
+    padding: 0.5em;
+    border: 1px solid $light-gray;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    @include breakpoint(xlarge) {
+        padding: $gutter;
+    }
+}
+
+.text-field:focus {
+    outline: none;
+    border-color: $dark-gray;
+}
+
+.send-button {
+    height: 5em;
+    width: 5em;
+    background: $dark-gray;
+    color: $light-green;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10em;
+    font-size: 1.3em;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    margin-bottom: -2em;
+    text-align: center;
+    padding: 1em;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        margin-top: 1.5em;
+    }
+    @include breakpoint(xlarge) {
+        margin-top: $gutter *3;
+    }
+}
+
+.send-button:hover {
+    background: $light-green;
+    color: $dark-gray;
+    border: 0.2em solid $light-gray;
+    padding: 0.9em;
+    @include breakpoint(xlarge) {
+        @include transform(scale(1.1));
+    }
+}

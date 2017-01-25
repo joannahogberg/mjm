@@ -1,0 +1,172 @@
+//imports
+@import "varmix";
+@import "landing";
+@import "structure";
+@import "footer";
+@import "queries";
+@import "nav";
+@import "contact";
+@import "about";
+@import "work";
+
+/*------------------------main content*/
+
+noscript {
+    background: $red;
+    text-align: center;
+    color: white;
+    font-family: $text-face;
+    padding: 2.5em;
+    z-index: 1000;
+}
+
+
+/* height to 100%, margin to 0% to create sticky footer */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    /* min-height to 100% to create sticky footer for flexbox*/
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    // display: flex;
+    // flex-direction: column;
+    background: $dark-gray;
+    // TEST TEST
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+
+/*------------------------typography*/
+
+h1 {
+    @include heading-1;
+}
+
+h2 {
+    @include heading-2;
+}
+
+h3 {
+    @include heading-3;
+}
+
+h4 {
+    @include heading-4;
+}
+
+h5 {
+    @include heading-5;
+}
+
+h6 {
+    @include heading-6;
+}
+
+p,
+span {
+    font-family: $text-face;
+    font-size: $text-size;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+a,
+label,
+input[type=submit] {
+    font-family: $heading-face;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    table-layout: fixed;
+    max-width: 2560px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    background: $dark-gray;
+    /*relative to set svg in top right corner with absolute positioning*/
+    position: relative;
+    /*hide overflow for divs that go outside the wrapper*/
+    overflow-x: hidden;
+}
+
+
+/*------------------------navigation*/
+
+
+/*Desktop Navigation*/
+
+header {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 6em;
+    @include breakpoint(large) {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
+
+.header {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    width: 80vw;
+    margin: 0 auto;
+    z-index: 9;
+    // ---------------------- Media queries 
+    @include breakpoint(small) {
+        width: 100vw;
+    }
+}
+
+.footer {
+    @include flex-center;
+    padding: $gutter *2;
+    color: $light-gray;
+}
+
+.footer span {
+    font-size: 0.75em;
+    text-align: center;
+    // ---------------------- Media queries
+    @include breakpoint(medium) {
+        font-size: $text-size;
+    }
+}
+
+#about {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    right: 25em;
+}
+
+#work {
+    position: absolute;
+    visibility: hidden;
+    top: -20%;
+    right: 20em;
+}
