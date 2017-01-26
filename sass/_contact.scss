@@ -90,13 +90,13 @@
     color: $dark-gray;
     // ---------------------- Media queries
     @include breakpoint(medium) {
-        font-size: 2.5em;
+        font-size: $text-size* 2.5;
     }
     @include breakpoint(large) {
-        font-size: 3em;
+        font-size: $text-size*3;
     }
     @include breakpoint(xlarge) {
-        font-size: 3.5em;
+        font-size: $text-size*3.5;
     }
 }
 
@@ -187,19 +187,14 @@
 }
 
 .contact-text {
-    font-size: 0.5rem;
+    font-size: 0.5em;
     @include transform(rotate(-25deg));
     // ---------------------- Media queries
     @include breakpoint(xsmall) {
-        font-size: 0.6rem;
+        font-size: 0.6em;
     }
     @include breakpoint(medium) {
-        font-size: 0.7rem;
-        @include transform(rotate(-60deg));
-    }
-    @include breakpoint(medium) {
-        font-size: 0.8rem;
-        padding: 0.2rem;
+        font-size: 0.7em;
         @include transform(rotate(-60deg));
     }
 }
