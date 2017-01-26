@@ -34,16 +34,9 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    // display: flex;
-    // flex-direction: column;
     background: $dark-gray;
-    // TEST TEST
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    @include flexbox;
+    @include flex-direction(column);
 }
 
 
@@ -88,16 +81,23 @@ input[type=submit] {
     text-decoration: none;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
+
+/*------------------------ Wrapper for all content */
+
 .wrapper {
-    display: flex;
-    flex-grow: 1;
+    @include flexbox;
+    @include flex-grow(1);
+    @include flex-direction(column);
+    @include align-items(center);
     width: 100%;
+    max-width: 2560px;
     height: auto;
     table-layout: fixed;
-    max-width: 2560px;
     margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
     background: $dark-gray;
     /*relative to set svg in top right corner with absolute positioning*/
     position: relative;
@@ -106,14 +106,11 @@ input[type=submit] {
 }
 
 
-/*------------------------navigation*/
-
-
-/*Desktop Navigation*/
+/*------------------------- Header*/
 
 header {
-    display: flex;
-    align-self: center;
+    @include flexbox;
+    @include align-self(center);
     width: 100%;
     z-index: 9;
     position: fixed;
@@ -127,13 +124,11 @@ header {
 }
 
 .header {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
+    @include flexbox;
+    @include justify-content(space-around);
+    @include align-items(center);
     width: 80vw;
+    max-width: 1200px;
     margin: 0 auto;
     z-index: 9;
     // ---------------------- Media queries
@@ -141,6 +136,9 @@ header {
         width: 100vw;
     }
 }
+
+
+/*------------------------- Footer*/
 
 .footer {
     @include flex-center;
@@ -156,6 +154,9 @@ header {
         font-size: $text-size;
     }
 }
+
+
+/*------------------------- Divs for anchor points*/
 
 #about {
     position: absolute;
