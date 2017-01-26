@@ -2,48 +2,50 @@
 
 .landing-box {
     @include flex-center;
-    flex-direction: row;
+    @include flex-direction(row);
     background: $yellow;
     width: 180vw;
     height: 20em;
     margin-top: $gutter * 8;
     @include transform(rotate(25deg));
-    //query
+
     @include breakpoint(small) {
         margin-top: $gutter * 8;
         height: 26rem;
-    }
-    ;
-    @include breakpoint(medium) {
-        //margin-top: $gutter * 10;
-    }
-    ;
+    };
     @include breakpoint(large) {
-        margin-top: $gutter * 14;
-    }
-    ;
+        margin-top: $gutter * 16;
+    };
 }
 
 .container-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 100%;
-    width: 110vw;
-    height: 110vw;
-    position: relative;
-    border: 1rem solid $light-gray;
-    background: $red;
-    background-size: 100%;
-    overflow: hidden;
-    word-wrap: break-word;
-    @include transition(all 100s ease);
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
+  border-radius: 100%;
+  width: 110vw;
+  height: 110vw;
+  position: relative;
+  border: 1rem solid $light-gray;
+  background: $red;
+  background-size: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  @include transition(all 100s ease);
+  @include breakpoint(xxsmall){
+    height: 23em;
+    width: 23em;
+  };
+  @include breakpoint(small){
+    height: 30em;
+    width: 30em;
+  };
 
   @include breakpoint(xlarge){
-        height:40rem;
-        width: 40rem;
-    };
+    height:36rem;
+    width: 36rem;
+  };
 
 }
 
@@ -51,10 +53,10 @@
 /*flexboxcontainer for images*/
 
 .flex-hero {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: space-around;
+    @include flexbox();
+    @include align-items(space-around);
+    @include justify-content(flex-start);
+    @include flex-direction(column);
     width: 100%;
     height: 20%;
 }
@@ -86,9 +88,10 @@
 ;
 //Images
 .figure {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
     color: #fff;
     opacity: 1;
     top: 30%;
@@ -102,25 +105,34 @@
     background: $light-gray;
     text-align: center;
     position: absolute;
-    /*
-  -webkit-perspective: 1000;
-    perspective: 1000;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;  */
-
-
-    //@include animation(figurelight, 2s, none , infinite);
     @include transition(all 0.5s ease);
     @include transform(translate(-50%, -50%) rotate(-25deg));
     left: 50%;
     z-index: 10;
     cursor: pointer;
     &:first-child {
-        left: 30%;
+      left: 25%;
     }
     &:last-child {
-        left: 70%;
+      left: 75%;
     }
+    @include breakpoint(small){
+      background: none;
+      top: 35%;
+      height: 8em;
+      width: 8em;
+
+      &:first-child {
+          left: 20%;
+      }
+      &:last-child {
+          left: 80%
+      }
+    }
+    @include breakpoint(medium){
+
+    };
+
     //class that is set on click when figure is active.
     &.is-active {
         cursor: default;
@@ -133,6 +145,7 @@
         top: 50%;
         left: 50%;
         overflow: hidden;
+
         &:hover {
             height: 100%;
             width: 100%;
@@ -157,7 +170,16 @@
 }
 
 //Hoverclass for profile-figure.
-.hover-figure {}
+.hover-figure {
+  @include breakpoint(small){
+    &:hover {
+        height: 8em;
+        width: 8em;
+        background: $light-gray;
+        color: black;
+      }
+  };
+}
 
 .filter {
     display: none;
@@ -169,8 +191,7 @@
         left: 50%;
         width: 100%;
         height: 100%;
-        @include transform(translate(-50%,
-        -50%));
+        @include transform(translate(-50%,-50%));
         z-index: 80;
         margin-top: 0;
         opacity: 0.2;
@@ -214,6 +235,12 @@
     position: absolute;
     bottom: 14.5em;
     left: 46%;
+    @include breakpoint(xxsmall){
+      bottom:14.5rem;
+    };
+    @include breakpoint(small){
+      bottom: 6rem;
+    };
     &.active {
         display: inline;
 
@@ -263,6 +290,17 @@
     margin: 2em 8em 0 8em;
     position: absolute;
     color: #fff;
+    @include breakpoint(xxsmall){
+      max-width: 80%;
+      left: -25%;
+      top: 32%;
+    };
+    @include breakpoint(small){
+      top: 33%;
+      left: -10%;
+      width: 72%;
+      text-align: left;
+    };
     &.active {
         display: inline;
         opacity: 1;
@@ -281,6 +319,22 @@
     font-size: 1.2em;
     text-align: left;
     position: absolute;
+    @include breakpoint(xxsmall){
+      left: -10%;
+      top: 2%;
+    };
+    @include breakpoint(small){
+      font-size: 200%;
+      letter-spacing: 0.5em;
+      text-align: left;
+      top: 2%;
+      left: -25%;
+      word-break: normal;
+    };
+    @include breakpoint(xlarge){
+      top: 2%;
+      left: -13%;
+    };
     &.active {
         display: inline;
         opacity: 1;
@@ -310,18 +364,14 @@
 
 //letter MJM in figures.
 .hero-h1 {
-    //absolut?
-    //position: static;
     align-self: center;
     font-size: 3em;
     margin: 0;
     @include transform(rotate(25deg));
-    //color: #fff;
-    //@include transition(all 0.5s ease);
-    &:hover {}
-    &:first-child {}
+    @include breakpoint(small){
+      font-size: 6em;
+    };
     &.active {
-        //@include transition(all 0.5s ease);
         opacity: 0;
     }
 }
