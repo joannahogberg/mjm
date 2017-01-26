@@ -580,39 +580,6 @@
   .hero-h1.active {
     opacity: 0; }
 
-/*------------------------Media queries*/
-@media screen and (min-width: 29em) {
-  .hero-h1 {
-    font-size: 6em; }
-
-    /*
-
-    .header_nav {
-        visibility: hidden;
-    }
-    #menu {
-        visibility: visible;
-    }
-    */ }
-/*
->>>>>>> master
-  Base for other queries
-  //LADNING PAGE RESPONSIVENESS ----------------
-  .container-hero {
-    &:hover{}
-  }
-  .hero-text-container{}
-  .figure {
-
-    &.is-active {}
-  }
-  .profile-name {}
-  .profile-text {
-    &.active{}
-  }
-
-
-  //LANDING PAGE END --------*/
 /*------------------------ Navigation*/
 /*------------------------ MJM  logo*/
 .logo {
