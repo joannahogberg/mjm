@@ -1,12 +1,42 @@
 //imports
 @import "varmix";
 @import "landing";
-@import "structure";
-@import "footer";
 @import "nav";
 @import "contact";
 @import "about";
 @import "work";
+
+/* ---------------------- Preparing styles */
+
+html,
+body,
+div,
+header,
+nav,
+section,
+footer,
+aside,
+article,
+figure,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+// For browsers without HTML5 support
+html,
+nav,
+main,
+footer,
+section {
+    display: block;
+}
+
+// To prevent Safari from scale text in iphone
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 
 /*------------------------main content*/
 
@@ -27,7 +57,7 @@ html {
 }
 
 body {
-    font-size: 16px;
+    font-size: $text-size;
     width: 100%;
     /* min-height to 100% to create sticky footer for flexbox*/
     min-height: 100%;
@@ -105,6 +135,19 @@ a:hover {
     overflow-x: hidden;
 }
 
+.grid {
+    display: flex;
+    align-self: center;
+    opacity: 0.5;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 1112;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
 
 /*------------------------- Fixed header*/
 
@@ -146,13 +189,16 @@ header {
     color: $light-gray;
 }
 
+.link {
+    color: $light-gray;
+}
+
 .footer span {
-    // font-size: 0.75em;
     text-align: center;
     //---------------------- Media queries
-    @include breakpoint(small) {
+    @include breakpoint(large) {
         // font-size: $text-size;
-        @include heading-3;
+        @include heading-4;
     }
 }
 

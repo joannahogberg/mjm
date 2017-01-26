@@ -63,12 +63,11 @@
     .overlay a {
         padding: $gutter /2;
         color: white;
-        font-size: $text-size * 1.5;
-        line-height: 1.5;
+        @include heading-4;
         transition: 0.5s;
         // ---------------------- Media queries
         @include breakpoint(medium) {
-            font-size: 2em;
+            @include heading-3;
         }
     }
     
@@ -86,7 +85,7 @@
     .header_nav {
         @include flexbox;
         @include justify-content(flex-end);
-        font-size: $text-size * 1.5;
+        @include heading-4;
         visibility: hidden;
         width: 100%;
         // ---------------------- Media queries
@@ -124,6 +123,6 @@
     .nav_background {
         @include breakpoint(large) {
             background: $dark-gray;
-            @include animation(head-fade, 2s, forwards, 1);
+            @include animation(head-fade, 0.5s, forwards, 1);
         }
     }
