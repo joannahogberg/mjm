@@ -1638,36 +1638,26 @@ color:black;
 a {
   text-decoration: none; }
 
+/*
 .about-h1 {
-  color: white;
-  -webkit-transform: rotate(0);
-  -moz-transform: rotate(0);
-  -ms-transform: rotate(0);
-  -o-transform: rotate(0);
-  transform: rotate(0);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.5;
-  font-size: 2.5em;
+  color:white;
+  @include transform(rotate(0));
+  @include transition(all 1s ease);
+  @include heading-2;
+  //top:1em;
   margin: 0 2em 4em 0;
-  cursor: pointer; }
-  .about-h1.is-active {
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-    transform: rotate(0);
-    margin: 1em 0; }
+  cursor: pointer;
+  //position:absolute;
+  //top:1em;
+  //margin: 1em 1em 1em 1em;
 
+  &.is-active {
+    @include transition(all 1s ease);
+    @include transform(rotate(0));
+    margin:1em 0;
+  }
+
+} */
 ´
 .work-container {
   display: inherit;
@@ -1720,6 +1710,9 @@ a {
 
 .bggray {
   background: #CCD7E4; }
+
+.work-text {
+  margin: 0 16px 0 16px; }
 
 /*------------------------main content*/
 noscript {

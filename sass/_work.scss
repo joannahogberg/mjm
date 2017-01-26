@@ -96,7 +96,7 @@
 a {
    text-decoration: none;
 }
-
+/*
 .about-h1 {
   color:white;
   @include transform(rotate(0));
@@ -115,7 +115,7 @@ a {
     margin:1em 0;
   }
 
-}
+} */
 ´
 .work-container {
     display: inherit;
@@ -163,4 +163,8 @@ background: $red;
 
 .bggray{
 background: $light-gray;
+}
+
+.work-text {
+    margin: 0 $gutter 0 $gutter;
 }
