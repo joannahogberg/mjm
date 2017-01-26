@@ -21,10 +21,10 @@
 //section for about.
 .about-box {
   position:relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(flex-end);
+  @include flex-direction(row);
   height:20rem;
   width: 180vw;
   background: $red;
@@ -34,9 +34,9 @@
   text-align: left;
 
   &.is-active {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    @include align-items(center);
     height:66.5em;
     margin:0 0 10em 0;
     @include transform(translate(0, 10%));
@@ -56,7 +56,7 @@
     @include transform(rotate(25deg) translate(-45%));
   };
   @include breakpoint(large){
-    margin-top:$gutter * 10
+    margin-top:$gutter * 12
 
   };
 }
@@ -94,10 +94,10 @@
     @include animation(fade, 1s, forwards, 1);
     opacity: 1;
     @include transition(all 1s ease);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
   }
   @include breakpoint(medium){
 
