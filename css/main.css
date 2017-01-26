@@ -1548,6 +1548,8 @@
   font-size: 2.5em;
   margin: 0 2em 4em 0;
   cursor: pointer; }
+  .about-h1:hover {
+    color: #CCD7E4; }
   .about-h1.is-active {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
