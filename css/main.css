@@ -1909,7 +1909,7 @@ h5 {
 h6 {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
-  font-size: 0.5em; }
+  font-size: 0.6em; }
 
 p,
 span {
@@ -2019,15 +2019,16 @@ header {
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 32px;
+  padding: 8px;
   color: #CCD7E4; }
 
 .footer span {
-  font-size: 0.75em;
   text-align: center; }
-  @media (min-width: 704px) {
+  @media (min-width: 464px) {
     .footer span {
-      font-size: 16px; } }
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.5;
+      font-size: 2em; } }
 
 /*------------------------- Divs for anchor points*/
 #about {
