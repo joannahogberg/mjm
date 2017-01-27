@@ -360,6 +360,9 @@
     text-align: center;
     line-height: 1.5;
     font-size: 1.2rem;
+    @include breakpoint(large){
+      font-size: 1.5rem;
+    };
 }
 
 //letter MJM in figures.
@@ -371,6 +374,7 @@
     @include breakpoint(small){
       font-size: 6em;
     };
+
     &.active {
         opacity: 0;
     }
