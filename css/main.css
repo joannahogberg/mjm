@@ -600,15 +600,15 @@
     transform: scale(1.2); }
   @media (min-width: 704px) {
     .logo {
-      height: 5rem; } }
+      height: 5em; } }
 
 /*------------------------- Mobile Navigation */
 /*------------------------- Hamburger icon */
 #menu {
   height: 5.5em;
-  width: 4em;
+  width: 4.5em;
   position: fixed;
-  top: 0.5em;
+  top: 0.2em;
   right: 24px;
   cursor: pointer;
   /* z-index 11 to alwaus stay on top*/
@@ -616,8 +616,8 @@
   @media (min-width: 704px) {
     #menu {
       height: 6em;
-      width: 4.5em;
-      top: -0.5em; } }
+      width: 5.5em;
+      top: 0; } }
   @media (min-width: 900px) {
     #menu {
       visibility: hidden; } }
