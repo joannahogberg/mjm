@@ -218,11 +218,6 @@
     text-align: center;
 }
 
-#email-span {
-    font-family: $text-face;
-    color: $dark-gray;
-}
-
 .contact-text {
     color: $dark-gray;
     font-size: 0.5em;
@@ -238,6 +233,11 @@
     @include breakpoint(large) {
         font-size: 0.8em;
     }
+}
+
+#email-span {
+    font-family: $text-face;
+    color: $dark-gray;
 }
 
 //--------------------- Content in red div */

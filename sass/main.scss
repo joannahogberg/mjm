@@ -206,6 +206,9 @@ header {
 
 .link {
     color: $light-gray;
+    &:hover {
+        color: white;
+    }
 }
 
 .footer span {
