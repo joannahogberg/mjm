@@ -2161,24 +2161,26 @@ header {
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  color: #CCD7E4; }
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 16px;
+  color: #CCD7E4;
+  text-align: center; }
+  @media (min-width: 900px) {
+    .footer {
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.5;
+      font-size: 1.5em; } }
+
+.footer h6 {
+  margin: 8px; }
 
 .link {
   color: #CCD7E4; }
   .link:hover {
     color: white; }
-
-.footer span {
-  text-align: center;
-  padding: 16px; }
-  @media (min-width: 900px) {
-    .footer span {
-      font-family: "Montserrat", sans-serif;
-      line-height: 1.5;
-      font-size: 1.5em; } }
-
-.footer span h6 {
-  margin: 8px; }
 
 /*------------------------- Divs for anchor points*/
 #about {
