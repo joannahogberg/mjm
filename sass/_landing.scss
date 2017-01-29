@@ -301,6 +301,9 @@
       width: 72%;
       text-align: left;
     };
+    @include breakpoint(xlarge){
+      font-size:120%;
+    };
     &.active {
         display: inline;
         opacity: 1;

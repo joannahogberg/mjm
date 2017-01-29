@@ -474,6 +474,9 @@
       left: -10%;
       width: 72%;
       text-align: left; } }
+  @media (min-width: 1200px) {
+    .profile-text {
+      font-size: 120%; } }
   .profile-text.active {
     display: inline;
     opacity: 1;
