@@ -566,7 +566,10 @@
   font-size: 1.2rem; }
   @media (min-width: 900px) {
     .hero-text {
-      font-size: 1.5rem; } }
+      font-size: 1.4rem; } }
+  @media (min-width: 1200px) {
+    .hero-text {
+      font-size: 1.6rem; } }
 
 .hero-h1 {
   align-self: center;
