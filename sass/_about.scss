@@ -68,6 +68,9 @@
   @include heading-2;
   margin: 0 2em 4em 0;
   cursor: pointer;
+  &:hover {
+    color:$light-gray;
+  }
 
   &.is-active {
     //@include transition(all 1s ease);
