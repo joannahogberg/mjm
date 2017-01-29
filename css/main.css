@@ -1129,10 +1129,6 @@
   transform: rotateY(180deg);
   text-align: center; }
 
-#email-span {
-  font-family: "Playfair Display", serif;
-  color: #2E3641; }
-
 .contact-text {
   color: #2E3641;
   font-size: 0.5em;
@@ -1155,6 +1151,10 @@
   @media (min-width: 900px) {
     .contact-text {
       font-size: 0.8em; } }
+
+#email-span {
+  font-family: "Playfair Display", serif;
+  color: #2E3641; }
 
 .contact-section-2 {
   width: 50%;
@@ -2165,6 +2165,8 @@ header {
 
 .link {
   color: #CCD7E4; }
+  .link:hover {
+    color: white; }
 
 .footer span {
   text-align: center;
