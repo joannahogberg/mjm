@@ -49,6 +49,21 @@ noscript {
     z-index: 1000;
 }
 
+.noscript-footer {
+    padding: 0;
+    background: $dark-gray;
+}
+
+.noscript-footer a {
+    color: $light-green;
+    font-size: 0.5em;
+    margin-bottom: -$gutter;
+    padding: -$gutter;
+    &:hover {
+        color: white;
+    }
+}
+
 
 /* height to 100%, margin to 0% to create sticky footer */
 
@@ -185,20 +200,25 @@ header {
 
 .footer {
     @include flex-center;
-    padding: $gutter /2;
+    @include flex-direction(column);
+    padding: $gutter;
     color: $light-gray;
-}
-
-.link {
-    color: $light-gray;
-}
-
-.footer span {
     text-align: center;
     //---------------------- Media queries
     @include breakpoint(large) {
         // font-size: $text-size;
         @include heading-4;
+    }
+}
+
+.footer h6 {
+    margin: $gutter /2;
+}
+
+.link {
+    color: $light-gray;
+    &:hover {
+        color: white;
     }
 }
 

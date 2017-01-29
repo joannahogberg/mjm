@@ -600,15 +600,15 @@
     transform: scale(1.2); }
   @media (min-width: 704px) {
     .logo {
-      height: 5rem; } }
+      height: 5em; } }
 
 /*------------------------- Mobile Navigation */
 /*------------------------- Hamburger icon */
 #menu {
   height: 5.5em;
-  width: 4em;
+  width: 4.5em;
   position: fixed;
-  top: 0.5em;
+  top: 0.2em;
   right: 24px;
   cursor: pointer;
   /* z-index 11 to alwaus stay on top*/
@@ -616,8 +616,8 @@
   @media (min-width: 704px) {
     #menu {
       height: 6em;
-      width: 4.5em;
-      top: -0.5em; } }
+      width: 5.5em;
+      top: 0; } }
   @media (min-width: 900px) {
     #menu {
       visibility: hidden; } }
@@ -1129,10 +1129,6 @@
   transform: rotateY(180deg);
   text-align: center; }
 
-#email-span {
-  font-family: "Playfair Display", serif;
-  color: #2E3641; }
-
 .contact-text {
   color: #2E3641;
   font-size: 0.5em;
@@ -1155,6 +1151,10 @@
   @media (min-width: 900px) {
     .contact-text {
       font-size: 0.8em; } }
+
+#email-span {
+  font-family: "Playfair Display", serif;
+  color: #2E3641; }
 
 .contact-section-2 {
   width: 50%;
@@ -1976,6 +1976,18 @@ noscript {
   padding: 2.5em;
   z-index: 1000; }
 
+.noscript-footer {
+  padding: 0;
+  background: #2E3641; }
+
+.noscript-footer a {
+  color: #c2fcd9;
+  font-size: 0.5em;
+  margin-bottom: -16px;
+  padding: -16px; }
+  .noscript-footer a:hover {
+    color: white; }
+
 /* height to 100%, margin to 0% to create sticky footer */
 html {
   height: 100%; }
@@ -2149,19 +2161,26 @@ header {
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 8px;
-  color: #CCD7E4; }
-
-.link {
-  color: #CCD7E4; }
-
-.footer span {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 16px;
+  color: #CCD7E4;
   text-align: center; }
   @media (min-width: 900px) {
-    .footer span {
+    .footer {
       font-family: "Montserrat", sans-serif;
       line-height: 1.5;
       font-size: 1.5em; } }
+
+.footer h6 {
+  margin: 8px; }
+
+.link {
+  color: #CCD7E4; }
+  .link:hover {
+    color: white; }
 
 /*------------------------- Divs for anchor points*/
 #about {
