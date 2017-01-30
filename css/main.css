@@ -565,7 +565,8 @@
   margin: 0 3em 0 3em;
   text-align: center;
   line-height: 1.5;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  color: #2E3641; }
   @media (min-width: 900px) {
     .hero-text {
       font-size: 1.4rem; } }
@@ -1570,7 +1571,8 @@
         margin: 1em; } }
 
 .about-h4 {
-  text-align: center; }
+  text-align: center;
+  color: #2E3641; }
 
 .about-article {
   -webkit-transition: all 1s ease;
@@ -1635,6 +1637,7 @@
   display: inherit;
   opacity: inherit;
   width: 80vw;
+  color: #2E3641;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
