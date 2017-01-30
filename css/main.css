@@ -1683,9 +1683,25 @@ color:black;
     display: none; } }
 .work-box {
   position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: flex-end;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
   align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   height: 20rem;
   width: 180vw;
   background: #f8fba2;

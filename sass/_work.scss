@@ -27,10 +27,8 @@
 //section for about.
 .work-box {
   position:relative;
-  display: flex;
-
-  justify-content: flex-end;
-  align-items: center;
+    @include flex-center();
+    @include flexbox();
   height:20rem;
   width: 180vw;
   background: $yellow;
