@@ -1,10 +1,12 @@
 /*--------------------- Contact page */
 
-//--------------------- Background divs */
 
-/*------------------------yellow top div*/
+/*--------------------- Background divs */
 
-.yellow_topbox {
+
+/*--------------------- Yellow top div */
+
+.yellow-topbox {
     @include flex-center;
     @include flex-direction(column);
     background: $yellow;
@@ -15,24 +17,26 @@
     z-index: 2;
     @include transform(rotate(25deg));
     // ---------------------- Media queries
+    @include breakpoint(xsmall) {
+        margin-top: $gutter * 5;
+    }
     @include breakpoint(small) {
-        margin-top: $gutter * 8;
+        margin-top: $gutter * 7;
     }
     @include breakpoint(medium) {
-        flex-direction: row;
-    }
-    @include breakpoint(large) {
-        margin-top: $gutter * 10;
         height: 36rem;
+        flex-direction: row;
+        margin-top: $gutter * 10;
     }
 }
 
-.red_midbox {
+.red-midbox {
     @include flex-center;
     background: $red;
     color: white;
     width: 180vw;
     height: 26em;
+    margin-top: $main-margin*2;
     z-index: 1;
     @include transform(rotate(-10deg));
     // ---------------------- Media queries
@@ -41,7 +45,7 @@
     }
 }
 
-.background-box-mediumgray {
+.gray-bottombox {
     width: 100vw;
     height: 20rem;
     position: absolute;
@@ -59,25 +63,41 @@
     }
 }
 
-//--------------------- Content in yellow div */
-.contact-section-1 {
-    width: 18em;
-    margin-left: -$main-margin*2;
+//--------------------- Container yellow div */
+.yellow-container {
+    height: 26em;
+    width: 50%;
+    max-width: 780px;
+    @include flex-center;
+    @include flex-direction(column);
     @include transform(rotate(-25deg));
-    // ---------------------- Media queries
-    @include breakpoint(small) {
-        width: 20em;
-    }
     @include breakpoint(medium) {
-        width: 30em;
-        margin-left: 0;
-        margin-right: -$gutter * 3;
+        @include flex-direction(row);
+        margin-right: $main-margin*5;
     }
     @include breakpoint(large) {
+        height: 36rem;
+    }
+}
+
+//--------------------- Content in yellow div */
+.contact-section-1 {
+    margin-bottom: $main-margin;
+    // ---------------------- Media queries
+    @include breakpoint(small) {
+        width: 26em;
+        margin-top: $main-margin*2;
+    }
+    @include breakpoint(medium) {
+        margin-right: -$main-margin*1.3;
+        margin-top: -$main-margin*2;
+    }
+    @include breakpoint(large) {
+        width: 30em;
         margin-right: 0;
     }
     @include breakpoint(xlarge) {
-        width: 35em;
+        width: 48.75em;
     }
 }
 
@@ -90,13 +110,13 @@
     color: $dark-gray;
     // ---------------------- Media queries
     @include breakpoint(medium) {
-        font-size: 2.5em;
+        @include heading-2;
     }
     @include breakpoint(large) {
-        font-size: 3em;
+        @include heading-1;
     }
     @include breakpoint(xlarge) {
-        font-size: 3.5em;
+        font-size: $text-size*3.5;
     }
 }
 
@@ -106,16 +126,21 @@
 .container-circles {
     @include flex-center;
     @include flex-direction(row);
-    margin-left: 7.5em;
+    @include transform(rotate(25deg));
     // ---------------------- Media queries
-    @include breakpoint(small) {
-        margin-left: 6em;
-    }
     @include breakpoint(medium) {
         @include flex-direction(column);
-        margin-left: 0;
-        margin-right: 7.5rem;
-        @include transform(rotate(35deg));
+        margin-right: $main-margin*1.2;
+        margin-top: $main-margin *6.5;
+        @include transform(rotate(60deg));
+    }
+    @include breakpoint(large) {
+        margin-top: $main-margin *9.5;
+        margin-right: $main-margin*1.4;
+    }
+    @include breakpoint(xlarge) {
+        margin-top: $main-margin *11;
+        margin-right: $main-margin*1.5;
     }
 }
 
@@ -144,12 +169,19 @@
     }
     // ---------------------- Media queries
     @include breakpoint(xsmall) {
-        margin: $gutter / 2;
+        margin: $gutter / 3;
+    }
+    @include breakpoint(small) {
+        margin: $gutter;
     }
     @include breakpoint(medium) {
         width: 7.5em;
         height: 7.5em;
         @include transform(rotate(-60deg));
+    }
+    @include breakpoint(large) {
+        width: 8em;
+        height: 8em;
     }
 }
 
@@ -187,35 +219,40 @@
 }
 
 .contact-text {
-    font-size: 0.5rem;
+    color: $dark-gray;
+    font-size: 0.5em;
     @include transform(rotate(-25deg));
     // ---------------------- Media queries
     @include breakpoint(xsmall) {
-        font-size: 0.6rem;
+        font-size: 0.6em;
     }
     @include breakpoint(medium) {
-        font-size: 0.7rem;
+        font-size: 0.7em;
         @include transform(rotate(-60deg));
     }
-    @include breakpoint(medium) {
-        font-size: 0.8rem;
-        padding: 0.2rem;
-        @include transform(rotate(-60deg));
+    @include breakpoint(large) {
+        font-size: 0.8em;
     }
+}
+
+#email-span {
+    font-family: $text-face;
+    color: $dark-gray;
 }
 
 //--------------------- Content in red div */
 .contact-section-2 {
-    width: 90vw;
+    width: 50%;
+    max-width: 780px;
     margin: $main-margin;
     text-align: center;
     @include transform(rotate(10deg));
     // ---------------------- Media queries
     @include breakpoint(medium) {
-        width: 42em;
+        // width: 42em;
     }
     @include breakpoint(xlarge) {
-        width: 20em;
+        // width: 20em;
         &:first-child {
             @include heading-3;
         }
@@ -265,8 +302,8 @@
         height: 60vw;
     }
     @include breakpoint(xlarge) {
-        width: 60em;
-        height: 60em;
+        width: 48.75em;
+        height: 48.75em;
     }
 }
 
@@ -279,10 +316,10 @@
     // ---------------------- Media queries
     @include breakpoint(medium) {
         margin-bottom: $gutter;
-        font-size: 1.5em;
+        @include heading-4;
     }
     @include breakpoint(xlarge) {
-        font-size: 3em;
+        @include heading-1;
     }
 }
 
@@ -367,7 +404,7 @@
     cursor: pointer;
     border: 0;
     border-radius: 10em;
-    font-size: 1.3em;
+    @include heading-4;
     margin: 0 auto;
     margin-top: 0.5em;
     margin-bottom: -2em;

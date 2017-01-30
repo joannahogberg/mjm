@@ -2,7 +2,7 @@
     /*------------------------ MJM  logo*/
     
     .logo {
-        height: 4rem;
+        height: 4em;
         margin-left: $main-margin;
         z-index: 10;
         &:hover {
@@ -10,17 +10,17 @@
         }
         // ---------------------- Media queries
         @include breakpoint(medium) {
-            height: 5rem;
+            height: 5em;
         }
     }
-    /* ------------------------ Mobile Navigation */
-    /*------------------------- Hamburger icon*/
+    /*------------------------- Mobile Navigation */
+    /*------------------------- Hamburger icon */
     
     #menu {
         height: 5.5em;
-        width: 4em;
+        width: 4.5em;
         position: fixed;
-        top: 0.5em;
+        top: 0.2em;
         right: $main-margin;
         cursor: pointer;
         /* z-index 11 to alwaus stay on top*/
@@ -28,8 +28,8 @@
         // ---------------------- Media queries
         @include breakpoint(medium) {
             height: 6em;
-            width: 4.5em;
-            top: -0.5em;
+            width: 5.5em;
+            top: 0;
         }
         @include breakpoint(large) {
             visibility: hidden;
@@ -47,7 +47,7 @@
         top: $main-margin;
         background: $red;
         overflow-x: hidden;
-        padding-top: 2em;
+        padding-top: $gutter *2;
         z-index: 10;
         @include transform(skew(-15deg));
         @include transition(0.5s);
@@ -56,19 +56,18 @@
     .overlay-content {
         @include flex-center;
         @include flex-direction(column);
-        margin-top: 2em;
+        margin-top: $main-margin * 1.5;
         @include transform(skew(15deg));
     }
     
     .overlay a {
         padding: $gutter /2;
         color: white;
-        font-size: 1.5rem;
-        line-height: 1.5;
+        @include heading-4;
         transition: 0.5s;
         // ---------------------- Media queries
         @include breakpoint(medium) {
-            font-size: 2em;
+            @include heading-3;
         }
     }
     
@@ -86,7 +85,7 @@
     .header_nav {
         @include flexbox;
         @include justify-content(flex-end);
-        font-size: 1.5em;
+        @include heading-4;
         visibility: hidden;
         width: 100%;
         // ---------------------- Media queries
@@ -124,6 +123,6 @@
     .nav_background {
         @include breakpoint(large) {
             background: $dark-gray;
-            @include animation(head-fade, 2s, forwards, 1);
+            @include animation(head-fade, 0.5s, forwards, 1);
         }
     }
