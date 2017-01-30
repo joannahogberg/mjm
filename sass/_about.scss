@@ -1,151 +1,161 @@
 //animation for about.
 @include keyframe (fade) {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
 @include keyframe (fade-out) {
-  from {
-    opacity: 1;
-    display: flex;
-  }
-  to {
-    opacity: 0;
-    display:none;
-  }
+    from {
+        opacity: 1;
+        display: flex;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
 }
 
 //section for about.
 .about-box {
-  position:relative;
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(flex-end);
-  @include flex-direction(row);
-  height:20rem;
-  width: 180vw;
-  background: $red;
-  margin-top: $gutter * 7;
-  @include transition(all 1.2s ease);
-  @include transform(rotate(25deg) translate(-20%,0));
-  text-align: left;
-
-  &.is-active {
-    @include flex-direction(column);
-    @include justify-content(flex-start);
+    position: relative;
+    @include flexbox();
     @include align-items(center);
-    height:66.5em;
-    margin:0 0 10em 0;
-    @include transform(translate(0, 10%));
-    @include breakpoint(xsmall){
-          height: 66em;
-    };
-    @include breakpoint(small){
-      height:68em;
-    };
-
-    @include breakpoint(medium){
-      height:74em;
-    };
-  }
-  //queries
-  @include breakpoint(small){
-    @include transform(rotate(25deg) translate(-45%));
-  };
-  @include breakpoint(large){
-    margin-top:$gutter * 12
-
-  };
+    @include justify-content(flex-end);
+    @include flex-direction(row);
+    height: 20rem;
+    width: 180vw;
+    background: $red;
+    margin-top: $gutter * 7;
+    @include transition(all 1.2s ease);
+    @include transform(rotate(25deg) translate(-20%, 0));
+    text-align: left;
+    &.is-active {
+        @include flex-direction(column);
+        @include justify-content(flex-start);
+        @include align-items(center);
+        height: 66.5em;
+        margin: 0 0 10em 0;
+        @include transform(translate(0, 10%));
+        @include breakpoint(xsmall) {
+            height: 66em;
+        }
+        ;
+        @include breakpoint(small) {
+            height: 68em;
+        }
+        ;
+        @include breakpoint(medium) {
+            height: 74em;
+        }
+        ;
+    }
+    //queries
+    @include breakpoint(small) {
+        @include transform(rotate(25deg) translate(-45%));
+    }
+    ;
+    @include breakpoint(large) {
+        margin-top: $gutter * 12
+    }
+    ;
 }
 
 .about-h1 {
-  color:white;
-  @include transform(rotate(-25deg));
-  @include transition(all 1s ease);
-  @include heading-2;
-  margin: 0 2em 4em 0;
-  cursor: pointer;
-  &:hover {
-    color:$light-gray;
-  }
-
-  &.is-active {
-    //@include transition(all 1s ease);
-    @include transform(rotate(0));
-    margin:0;
-    @include breakpoint(large){
-      margin:1em;
-    };
-  }
+    color: white;
+    @include transform(rotate(-25deg));
+    @include transition(all 1s ease);
+    @include heading-2;
+    margin: 0 2em 4em 0;
+    cursor: pointer;
+    &:hover {
+        color: $light-gray;
+    }
+    &.is-active {
+        //@include transition(all 1s ease);
+        @include transform(rotate(0));
+        margin: 0;
+        @include breakpoint(large) {
+            margin: 1em;
+        }
+        ;
+    }
 }
 
 .about-h4 {
-  text-align: center;
+    text-align: center;
+    color: $dark-gray;
 }
 
 .about-article {
-  @include transition(all 1s ease);
-  width: 100vw;
-  margin:0;
-  opacity: 0;
-  display: none;
-  background:white;
-  &.is-active {
-    @include animation(fade, 1s, forwards, 1);
-    opacity: 1;
     @include transition(all 1s ease);
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-direction(column);
-  }
-  @include breakpoint(medium){
-
-  };
+    width: 100vw;
+    margin: 0;
+    opacity: 0;
+    display: none;
+    background: white;
+    &.is-active {
+        @include animation(fade, 1s, forwards, 1);
+        opacity: 1;
+        @include transition(all 1s ease);
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+    }
+    @include breakpoint(medium) {}
+    ;
 }
 
 .about-p {
-  margin: 0 $gutter $gutter $gutter;
-  display: inherit;
-  opacity: inherit;
-  width:80vw;
-  @include transition(all 1s ease);
-  @include breakpoint(small){
-    max-width: 425px;
-  };
-  @include breakpoint(medium){
-    max-width: 580px;
-  };
-  @include breakpoint(large){
-    width: 780px;
-  };
+    margin: 0 $gutter $gutter $gutter;
+    display: inherit;
+    opacity: inherit;
+    width: 80vw;
+    color: $dark-gray;
+    @include transition(all 1s ease);
+    @include breakpoint(small) {
+        max-width: 425px;
+    }
+    ;
+    @include breakpoint(medium) {
+        max-width: 580px;
+    }
+    ;
+    @include breakpoint(large) {
+        width: 780px;
+    }
+    ;
 }
 
 .about-img {
-  width: 80vw;
-//queries
-  @include breakpoint(small){
-    max-width: 425px;
-  };
-  @include breakpoint(medium){
-    max-width: 580px;
-  };
-  @include breakpoint(large){
-    width:40em;
-  };
+    width: 80vw;
+    //queries
+    @include breakpoint(small) {
+        max-width: 425px;
+    }
+    ;
+    @include breakpoint(medium) {
+        max-width: 580px;
+    }
+    ;
+    @include breakpoint(large) {
+        width: 40em;
+    }
+    ;
 }
-.arrow-about {
-  cursor: pointer;
-  display: none;
-  height: 2em;
-  margin: 1em;
 
-  &.is-active {
-    @include animation(fade, 2s, forwards, 1);
-    display: inline;
-    opacity: 1;
-  }
+.arrow-about {
+    cursor: pointer;
+    display: none;
+    height: 2em;
+    margin: 1em;
+    &.is-active {
+        @include animation(fade, 2s, forwards, 1);
+        display: inline;
+        opacity: 1;
+    }
 }
