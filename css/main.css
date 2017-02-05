@@ -2171,19 +2171,7 @@ a:hover {
   /*relative to set svg in top right corner with absolute positioning*/
   position: relative;
   /*hide overflow for divs that go outside the wrapper*/
-  overflow-x: hidden; }
-
-.grid {
-  display: flex;
-  align-self: center;
-  opacity: 0.5;
-  width: 100%;
-  max-width: 1200px;
-  z-index: 1112;
-  position: fixed;
-  right: 0;
-  left: 0;
-  margin: 0 auto; }
+  overflow: hidden; }
 
 /*------------------------- Fixed header*/
 header {
