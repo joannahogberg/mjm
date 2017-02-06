@@ -203,7 +203,7 @@
 
 .contact_circle:hover .info {
     @include transform(rotateY(180deg));
-    @include backface-visibility(hidden);
+    @include backface-visibility(visible);
 }
 
 .face {
@@ -267,15 +267,41 @@
     }
 }
 
+.formContainer {
+    display: flex;
+    width: 100vw;
+    max-width: 1200px;
+    height: 22em;
+    position: relative;
+    @include breakpoint(xxsmall) {
+        height: 25em;
+    }
+    @include breakpoint(xsmall) {
+        height: 28em;
+    }
+    @include breakpoint(small) {
+        height: 41em;
+    }
+    @include breakpoint(medium) {
+        height: 35em;
+    }
+    @include breakpoint(large) {
+        height: 45em;
+    }
+    @include breakpoint(xlarge) {
+        height: 55em;
+    }
+}
+
 
 /*------------------------Contact form with animation*/
 
 @include keyframe(formMove) {
     from {
-        top: 0%;
+        top: -100em;
     }
     to {
-        top: 100%;
+        top: 0;
     }
 }
 

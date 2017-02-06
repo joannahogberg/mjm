@@ -1108,11 +1108,11 @@
   -ms-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -o-backface-visibility: visible;
+  backface-visibility: visible; }
 
 .face {
   position: absolute;
@@ -1181,32 +1181,57 @@
     .text-section-2 {
       font-size: 24px; } }
 
+.formContainer {
+  display: flex;
+  width: 100vw;
+  max-width: 1200px;
+  height: 22em;
+  position: relative; }
+  @media (min-width: 360px) {
+    .formContainer {
+      height: 25em; } }
+  @media (min-width: 375px) {
+    .formContainer {
+      height: 28em; } }
+  @media (min-width: 464px) {
+    .formContainer {
+      height: 41em; } }
+  @media (min-width: 704px) {
+    .formContainer {
+      height: 35em; } }
+  @media (min-width: 900px) {
+    .formContainer {
+      height: 45em; } }
+  @media (min-width: 1200px) {
+    .formContainer {
+      height: 55em; } }
+
 /*------------------------Contact form with animation*/
 @-webkit-keyframes formMove {
   from {
-    top: 0%; }
+    top: -100em; }
   to {
-    top: 100%; } }
+    top: 0; } }
 @-moz-keyframes formMove {
   from {
-    top: 0%; }
+    top: -100em; }
   to {
-    top: 100%; } }
+    top: 0; } }
 @-ms-keyframes formMove {
   from {
-    top: 0%; }
+    top: -100em; }
   to {
-    top: 100%; } }
+    top: 0; } }
 @-o-keyframes formMove {
   from {
-    top: 0%; }
+    top: -100em; }
   to {
-    top: 100%; } }
+    top: 0; } }
 @keyframes formMove {
   from {
-    top: 0%; }
+    top: -100em; }
   to {
-    top: 100%; } }
+    top: 0; } }
 .form_circle {
   display: -webkit-box;
   display: -moz-box;
